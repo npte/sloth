@@ -46,7 +46,7 @@
 };
 
 #tick {ticker} {
-	#if {$checkarenaenter != "1"} {
+	#if {$checkarenaenter != "0"} {
 		tell lyme-innkeeper ping;
 	};
 } {60};
