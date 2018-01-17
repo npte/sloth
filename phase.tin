@@ -1,12 +1,36 @@
+#class ARENA read arena.tin
 #class MSDP read msdp.tin
-#class COMMON read common.tin
 
-#var checkarenaenter "-1"
-#var watercontainer barrel
+#var checkarenaenter "0"
 
-#var armor {stone skin}
-#var bless {bless}
-#var lite {sanctuary}
+#action {You are thirsty} {
+	#if {$checkarenaenter == "1"}
+	{
+		wake;
+		stand;
+		cast 'create water' barrel;
+		dri barrel;
+		sle;
+	} {#nop}
+}
 
-#alias attether {cast 'thunder clap'}
-#alias attsolid {cast 'thunder clap'}
+#action {You are hungry} {
+	#if {$checkarenaenter == "1"}
+	{
+		wake;
+		stand;
+		cast 'create food';
+		get food;
+		eat food;
+		sle;
+	} {#nop}
+}
+
+#tick {ticker} {
+	#if {$checkarenaenter == "1"}
+	{
+		tell lyme-innkeeper ping;
+	} {#nop}
+} {60}
+
+#alias {consloth} {#sess sloth slothmud.org 6101}
