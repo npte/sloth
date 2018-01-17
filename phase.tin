@@ -1,0 +1,12 @@
+#class MSDP read msdp.tin
+#class COMMON read common.tin
+
+#var checkarenaenter "-1"
+#var watercontainer barrel
+
+#var armor {stone skin}
+#var bless {bless}
+#var lite {sanctuary}
+
+#alias attether {cast 'thunder clap'}
+#alias attsolid {cast 'thunder clap'}

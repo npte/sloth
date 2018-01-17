@@ -1,0 +1,139 @@
+#var true {"true"};
+#var false {"false"};
+#var GLOBAL_OFA $true;
+
+#var MOBS {
+	{A bright-red fire lizard} {{NAME}{lizard}{ATK}{attsolid }{OFA}{$true}}
+	{A faerine warrior} {{NAME}{warrior}{ATK}{attsolid }{OFA}{$true}}
+	{A giant sow bug} {{NAME}{bug}{ATK}{attsolid }{OFA}{$true}}
+	{A giant undead octopus}  {{NAME}{octopus}{ATK}{attsolid }{OFA}{$true}}
+	{A gibbering mouther} {{NAME}{mouther}{ATK}{attsolid }{OFA}{$true}}
+	{A kobold gladiator slave} {{NAME}{gladiator}{ATK}{attsolid }{OFA}{$true}}
+	{A masked quickling assassin} {{NAME}{assassin}{ATK}{attsolid }{OFA}{$true}}
+	{A ravenous zombie} {{NAME}{zombie}{ATK}{attsolid }{OFA}{$true}}
+	{A sludge monster} {{NAME}{monster}{ATK}{attsolid }{OFA}{$true}}
+	{A snarling gnoll axeman} {{NAME}{gnoll}{ATK}{attsolid }{OFA}{$true}}
+	{A vorpal bunny} {{NAME}{bunny}{ATK}{attsolid }{OFA}{$true}}
+	{An adept firenewt battle mage} {{NAME}{firenewt}{ATK}{attsolid }{OFA}{$true}}
+	{An adept firenewt battle priest} {{NAME}{firenewt}{ATK}{attsolid }{OFA}{$true}}
+	{An agitated green slime} {{NAME}{slime}{ATK}{attsolid }{OFA}{$true}}
+	{Calliperus the rogue} {{NAME}{Calliperus}{ATK}{attsolid }{OFA}{$true}}
+	{Devon the bard} {{NAME}{Devon}{ATK}{attsolid }{OFA}{$true}}
+	{Eunice the mage} {{NAME}{Eunice}{ATK}{attsolid }{OFA}{$true}}
+	{Giolvira, daughter of Kyuss} {{NAME}{Giolvira}{ATK}{attsolid }{OFA}{$true}}
+	{Gordo, the barbarian} {{NAME}{Gordo}{ATK}{attsolid }{OFA}{$true}}
+	{Sonjill the warrior bard} {{NAME}{Sonjill}{ATK}{attsolid }{OFA}{$true}}
+	{A skeletal warrior} {{NAME}{warrior}{ATK}{attsolid }{OFA}{$true}}
+	{Merate the thief acrobat} {{NAME}{Merate}{ATK}{attsolid }{OFA}{$true}}
+	{A silverback gorilla} {{NAME}{gorilla}{ATK}{attsolid }{OFA}{$true}}
+	{A thatch golem} {{NAME}{golem}{ATK}{attsolid }{OFA}{$true}}
+	{A giant walking stick} {{NAME}{stick}{ATK}{attsolid }{OFA}{$true}}
+	{The king's royal guard} {{NAME}{guard}{ATK}{attsolid }{OFA}{$true}}
+	{A dirty drunken dwarf} {{NAME}{dwarf}{ATK}{attsolid }{OFA}{$true}}
+	{A silver samurai} {{NAME}{samurai}{ATK}{attsolid }{OFA}{$true}}
+	{A fairy shaman} {{NAME}{shaman}{ATK}{attsolid }{OFA}{$true}}
+	{A juvenile minotaur} {{NAME}{minotaur}{ATK}{attsolid }{OFA}{$true}}
+	{A blade wielding snudiss} {{NAME}{blade}{ATK}{attsolid }{OFA}{$true}}
+	{A swarm of midges} {{NAME}{swarm}{ATK}{attether }{OFA}{$false}}
+	{A dark guardian} {{NAME}{guardian}{ATK}{attether }{OFA}{$false}}
+	{A lesser shadow} {{NAME}{shadow}{ATK}{cast 'turn undead' }{OFA}{$false}}
+	{A giant ethereal ant} {{NAME}{ant}{ATK}{cast 'turn undead' }{OFA}{$false}}
+	{A chaotic poltergeist} {{NAME}{poltergeist}{ATK}{cast 'turn undead' }{OFA}{$false}}
+};
+
+#action {%1 is waiting for you on the other side.} {
+	#var target $MOBS[%1][NAME];
+	#var OFA $MOBS[%1][OFA];
+	#send {$MOBS[%1][ATK] $target};
+};
+
+#action {hates your guts!} {
+	#if {$GLOBAL_OFA == $true} {
+		#if {$OFA == $true} {
+			#send {order followers assist $MSDP_CHARACTER_NAME};
+		} {#nop};
+	} {#nop};
+}
+
+#action {Your followers don't seem to be obeying you today} {
+	order followers assist $MSDP_CHARACTER_NAME
+}
+
+#action {A floating orb bathes you in blue light refreshing your energy} {cast 'thunder clap' $target}
+#action {You struggle with a giant undead octopus's tentacle, to no effect} {cast 'thunder clap' $target}
+#action {You failed to cast 'destruction'} {cast 'destruction' $target}
+#action {is blasted away} {cast 'destruction' $target}
+#action {You failed to cast 'thunder clap'} {cast 'thunder clap' $target}
+#action {Your thunder clap hits} {cast 'thunder clap' $target}
+#action {You failed to cast 'fireball'} {cast 'fireball' $target}
+#action {You throw a fireball} {cast 'fireball' $target}
+
+#action {A pedestal underfoot begins to swivel on its axis, moving you into the arena} {cast 'wall of flesh'}
+#action {You failed to cast 'wall of flesh'} {cast 'wall of flesh'}
+#action {You are surrounded by a wall of rotting flesh} {cast 'stone skin'}
+#action {You failed to cast 'stone skin'} {cast 'stone skin'}
+#action {You feel your skin become much, much stronger} {cast 'bless'}
+#action {You failed to cast 'bless'} {cast 'bless'}
+#action {You feel righteous} {cast 'regeneration'}
+#action {You failed to cast 'regeneration'} {cast 'regeneration'}
+#action {You suddenly feel incredibly healthy and vigorous!} {cast 'fluidity'}
+#action {You failed to cast 'fluidity'} {cast 'fluidity'}
+#action {Your body mass slowly changes from solid to gelatinous} {push button}
+
+#action {is mortally wounded, and will die soon, if not aided} {kill $target}
+#action {You are knocked off your feet} {stand}
+#action {Maybe you should get on your feet first?} {stand}
+
+
+#alias {healup} {
+	#send {|};
+	#if {$MSDP_HEALTH <= 200} {cast 'greater heal'; cast 'greater heal'} {#nop}
+}
+
+#action {You received} {healup; push button}
+#action {Total exp for kill is} {healup; push button}
+
+
+#action {The floor swivels, forcing you to leave the arena area}
+{
+	healup;
+	sleep;
+    #var checkarenaenter "1";
+	#tick {ticker1}
+	{
+		wake;
+		stand;
+		cast 'ban';
+		cast 'summon undead' 3 spectre;
+		cast 'bless' spectre;
+		cast 'bless' 2.spectre;
+		cast 'bless' 3.spectre;
+		#untick ticker1;
+		#tick {ticker2} {
+			#if {$checkarenaenter == "1"}
+			{
+				wake;
+				stand;
+				check hourglass;
+			} {#nop}
+		} {60}
+	} {480}
+}
+
+#action {%1 must wait %2 minutes before being allowed back into the arena area} {
+	#if {"%1" == "$MSDP_CHARACTER_NAME"} {sleep} {
+		#var checkarenaenter "0";
+		#untick ticker2;
+		pull chain
+	}
+}
+
+#action {No one is on the waiting list to enter the arena} {
+    #var checkarenaenter "0";
+	#untick ticker2;
+	#send {pull chain};
+}
+
+#action {This isn't the post office} {sleep}
+
+#alias {tocoli} {shape ferret;w;n;n;e;e;n;n;n;e;e;e;e;e;e;n;n;n;w;n;n;n;n;n;n;e;e;e;n;n;n;n;shape ret;summon juju}
