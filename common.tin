@@ -22,37 +22,33 @@
 };
 
 #action {You are thirsty} {
-	#if {$checkarenaenter == "1"};
-	{
+	#if {$checkarenaenter == "1"} {
 		wake;
 		stand;
 		cast 'create water' barrel;
 		dri barrel;
 		sle;
-	} {#nop};
-	#if {$checkarenaenter == "0"};
-	{
+	};
+	#if {$checkarenaenter == "0"} {
 		dri barrel;
-	} {#nop};
+	};
 };
 
 #action {You are hungry} {
-	#if {$checkarenaenter == "1"};
-	{
+	#if {$checkarenaenter == "1"} {
 		wake;
 		stand;
 		cast 'create food';
 		get food;
 		eat food;
 		sle;
-	} {#nop};
+	};
 };
 
 #tick {ticker} {
-	#if {$checkarenaenter != "1"};
-	{
+	#if {$checkarenaenter != "1"} {
 		tell lyme-innkeeper ping;
-	} {#nop};
+	};
 } {60};
 
 #alias {consloth} {#sess sloth slothmud.org 6101};
