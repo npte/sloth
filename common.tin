@@ -203,96 +203,96 @@
 };
 
 #alias {infra} {
-	#var victim = %1;
-	#if {$victim == ""} {
-		#var victim $MSDP_CHARACTER_NAME;
-	};
+	#var victim $MSDP_CHARACTER_NAME;
+    #if {"%1" != ""} {
+        #var victim %1;
+    };
 	cast 'infra' $victim;
 };
 
 #alias {fly} {
-    #var victim = %1;
-    #if {$victim == ""} {
-        #var victim $MSDP_CHARACTER_NAME;
+    #var victim $MSDP_CHARACTER_NAME;
+    #if {"%1" != ""} {
+        #var victim %1;
     };
     cast 'fly' $victim;
 };
 
 #alias {wall} {
-    #var victim = %1;
-    #if {$victim == ""} {
-        #var victim $MSDP_CHARACTER_NAME;
+    #var victim $MSDP_CHARACTER_NAME;
+    #if {"%1" != ""} {
+        #var victim %1;
     };
     cast 'wall' $victim;
 };
 
 #alias {cloak} {
-    #var victim = %1;
-    #if {$victim == ""} {
-        #var victim $MSDP_CHARACTER_NAME;
+    #var victim $MSDP_CHARACTER_NAME;
+    #if {"%1" != ""} {
+        #var victim %1;
     };
     cast 'dark cloak' $victim;
 };
 #alias {invis} {
-    #var victim = %1;
-    #if {$victim == ""} {
-        #var victim $MSDP_CHARACTER_NAME;
+    #var victim $MSDP_CHARACTER_NAME;
+    #if {"%1" != ""} {
+        #var victim %1;
     };
     cast 'invisibility' $victim;
 };
 
 #alias {wb} {
-    #var victim = %1;
-    #if {$victim == ""} {
-        #var victim $MSDP_CHARACTER_NAME;
+    #var victim $MSDP_CHARACTER_NAME;
+    #if {"%1" != ""} {
+        #var victim %1;
     };
     cast 'water breathing' $victim;
 };
 
 #alias {dark} {
-    #var victim = %1;
-    #if {$victim == ""} {
-        #var victim $MSDP_CHARACTER_NAME;
+    #var victim $MSDP_CHARACTER_NAME;
+    #if {"%1" != ""} {
+        #var victim %1;
     };
     cast 'darkness' $victim;
 };
 
 #alias {rg} {
-    #var victim = %1;
-    #if {$victim == ""} {
-        #var victim $MSDP_CHARACTER_NAME;
+    #var victim $MSDP_CHARACTER_NAME;
+    #if {"%1" != ""} {
+        #var victim %1;
     };
     cast 'regeneration' $victim;
 };
 
 #alias {bl} {
-    #var victim = %1;
-    #if {$victim == ""} {
-        #var victim $MSDP_CHARACTER_NAME;
+    #var victim $MSDP_CHARACTER_NAME;
+    #if {"%1" != ""} {
+        #var victim %1;
     };
     cast '$bless' $victim;
 };
 
 #alias {stone} {
-    #var victim = %1;
-    #if {$victim == ""} {
-        #var victim $MSDP_CHARACTER_NAME;
+    #var victim $MSDP_CHARACTER_NAME;
+    #if {"%1" != ""} {
+        #var victim %1;
     };
     cast '$armor' $victim;
 };
 
 #alias {lite} {
-    #var victim = %1;
-    #if {$victim == ""} {
-        #var victim $MSDP_CHARACTER_NAME;
+    #var victim $MSDP_CHARACTER_NAME;
+    #if {"%1" != ""} {
+        #var victim %1;
     };
     cast '$lite' $victim;
 };
 
 #alias {gh} {
     #var victim $MSDP_CHARACTER_NAME;
-    #if {"%1" == ""} {
-        #var victim = %1;
+    #if {"%1" != ""} {
+        #var victim %1;
     };
     cast 'greater heal' $victim;
 };
@@ -302,9 +302,9 @@
 };
 
 #alias {h} {
-    #var victim = %1;
-    #if {$victim == ""} {
-        #var victim $MSDP_CHARACTER_NAME;
+    #var victim $MSDP_CHARACTER_NAME;
+    #if {"%1" != ""} {
+        #var victim %1;
     };
     cast 'heal' $victim;
 };
@@ -314,9 +314,9 @@
 };
 
 #alias {rt} {
-    #var victim = %1;
-    #if {$victim == ""} {
-        #var victim $MSDP_CHARACTER_NAME;
+    #var victim $MSDP_CHARACTER_NAME;
+    #if {"%1" != ""} {
+        #var victim %1;
     };
     cast 'restoration' $victim;
 };
@@ -326,25 +326,25 @@
 };
 
 #alias {refresh} {
-    #var victim = %1;
-    #if {$victim == ""} {
-        #var victim $MSDP_CHARACTER_NAME;
+    #var victim $MSDP_CHARACTER_NAME;
+    #if {"%1" != ""} {
+        #var victim %1;
     };
     cast 'refresh' $victim;
 };
 
-#alias {rcurse} {
-    #var victim = %1;
-    #if {$victim == ""} {
-        #var victim $MSDP_CHARACTER_NAME;
+#alias {remc} {
+    #var victim $MSDP_CHARACTER_NAME;
+    #if {"%1" != ""} {
+        #var victim %1;
     };
     cast 'remove curse' $victim;
 };
 
-#alias {rpoison} {
-    #var victim = %1;
-    #if {$victim == ""} {
-        #var victim $MSDP_CHARACTER_NAME;
+#alias {remp} {
+    #var victim $MSDP_CHARACTER_NAME;
+    #if {"%1" != ""} {
+        #var victim %1;
     };
     cast 'remove poison' $victim;
 };
