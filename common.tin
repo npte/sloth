@@ -290,9 +290,9 @@
 };
 
 #alias {gh} {
-    #var victim = %1;
-    #if {$victim == ""} {
-        #var victim $MSDP_CHARACTER_NAME;
+    #var victim $MSDP_CHARACTER_NAME;
+    #if {"%1" == ""} {
+        #var victim = %1;
     };
     cast 'greater heal' $victim;
 };
