@@ -360,7 +360,7 @@
 #alias {sil} {cast 'silence' %1};
 #alias {feast} {cast 'feast'};
 #alias {locate} {cast 'locate object' %1};
-#alias {sleep} {cast 'sleep' %1};
+#alias {slp} {cast 'sleep' %1};
 #alias {mace} {cast 'dark mace'};
 #alias {cheat} {cast 'cheat death'};
 #alias {fam} {cast 'familiar' %1};
