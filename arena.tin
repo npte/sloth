@@ -93,10 +93,16 @@
 #action {You received} {healup; push button}
 #action {Total exp for kill is} {healup; push button}
 
+#alias {healupfull} {
+	#send {|};
+	#math {count} {($MSDP_HEALTH_MAX - $MSDP_HEALTH) / 150};
+	#loop 1 $count cnt {cast 'greater heal'};
+}
+
 
 #action {The floor swivels, forcing you to leave the arena area}
 {
-	healup;
+	healupfull;
 	sleep;
     #var checkarenaenter "1";
 	#tick {ticker1}
