@@ -374,3 +374,25 @@
 #alias {call} {cast 'summon undead' %1 %2};
 #alias {embalm} {cast 'embalm' %1};
 
+#var autostrike $false
+#alias {autostrike} {
+    #if {$autostrike == $false} {
+        #var autostrike $true;
+        #class AUTOSTRIKE read autostrike.tin;
+    } {
+        #var autostrike $false;
+        #class AUTOSTRIKE kill;
+    }
+}
+
+#var autokick $false
+#alias {autokick} {
+    #if {$autokick == $false} {
+        #var autokick $true;
+        #class AUTOKICK read autokick.tin;
+    } {
+        #var autokick $false;
+        #class AUTOKICK kill;
+    }
+}
+

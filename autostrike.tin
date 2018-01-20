@@ -1,0 +1,3 @@
+#action {^Your strike at} {strike}
+#action {^You land a powerful strike into} {strike}
+

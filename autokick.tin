@@ -1,0 +1,5 @@
+#action {^Your kick hits} {kick}
+#action {^Your boots need polishing again - blood all over} {kick}
+#action {^Your beautiful full-circle-kick misses} {kick}
+#action {^You miss your kick at} {kick}
+
