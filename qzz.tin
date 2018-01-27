@@ -1,0 +1,12 @@
+#class MSDP read msdp.tin
+#class COMMON read common.tin
+
+#var checkarenaenter "-1"
+#var watercontainer waterskin
+
+#var armor {stone skin}
+#var bless {bless}
+#var lite {shield of fa}
+
+#var attether {cast 'colour spray'}
+#var attsolid {strike}
