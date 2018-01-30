@@ -115,17 +115,17 @@
 			cast 'bless' spectre;
 			cast 'bless' 2.spectre;
 			cast 'bless' 3.spectre;
-		}
+                        sleep;
+		};
 		#untick ticker1;
 		#tick {ticker2} {
-			#if {$checkarenaenter == "1"}
-			{
+			#if {$checkarenaenter == "1"} {
 				wake;
 				stand;
 				check hourglass;
-			}
-		} {60}
-	} {480}
+			};
+		} {60};
+	} {480};
 }
 
 #action {%1 must wait %2 minutes before being allowed back into the arena area} {
