@@ -59,8 +59,12 @@
 	order followers assist $MSDP_CHARACTER_NAME
 }
 
-#action {A floating orb bathes you in blue light refreshing your energy} {cast 'thunder clap' $target}
-#action {You struggle with a giant undead octopus's tentacle, to no effect} {cast 'thunder clap' $target}
+#action {vanishes in a burning wind.} {cast 'firewind' $target}
+#action {You failed to cast 'firewind'} {cast 'firewind' $target}
+#action {bellows in agony!} {cast 'turn undead' $target}
+#action {You failed to cast 'turn undead'} {cast 'turn undead' $target}
+#action {A floating orb bathes you in blue light refreshing your energy} {#send {$MOBS[%1][ATK] $target};}
+#action {You struggle with a giant undead octopus's tentacle, to no effect} {#send {$MOBS[%1][ATK] $target};}
 #action {You failed to cast 'destruction'} {cast 'destruction' $target}
 #action {is blasted away} {cast 'destruction' $target}
 #action {You failed to cast 'thunder clap'} {cast 'thunder clap' $target}

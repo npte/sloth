@@ -8,5 +8,5 @@
 #var bless {bless}
 #var lite {sanctuary}
 
-#var attether {cast 'thunder clap'}
-#var attsolid {cast 'thunder clap'}
+#var attether {cast 'firewind'}
+#var attsolid {cast 'firewind'}
