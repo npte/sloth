@@ -118,7 +118,7 @@
 {
 	healupfull;
 	sleep;
-    #var checkarenaenter "1";
+        #var checkarenaenter "1";
 	#var NEED_WRAITH $false; 
 	#tick {ticker1}
 	{
@@ -126,7 +126,10 @@
 			wake;
 			stand;
 			cast 'ban';
-			cast 'summon undead' $undeads;
+			cast 'summon undead' 3 poltergeist;
+			cast 'bless' polter;
+			cast 'bless' 2.polter;
+			cast 'bless' 3.polter;
                         sleep;
 		};
 		#untick ticker1;
