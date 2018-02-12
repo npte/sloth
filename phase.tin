@@ -10,3 +10,5 @@
 
 #var attether {cast 'firewind'}
 #var attsolid {cast 'firewind'}
+
+#var CAN_WRAITH {"true"};

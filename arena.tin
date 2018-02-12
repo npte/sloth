@@ -1,6 +1,7 @@
 #var true {"true"};
 #var false {"false"};
 #var GLOBAL_OFA $true;
+#var NEED_WRAITH $false; 
 
 #var MOBS {
 	{A bright-red fire lizard} {{NAME}{lizard}{ATK}{$attsolid }{OFA}{$true}}
@@ -82,8 +83,15 @@
 #action {You failed to cast 'regeneration'} {cast 'regeneration'}
 #action {You suddenly feel incredibly healthy and vigorous!} {cast 'fluidity'}
 #action {You failed to cast 'fluidity'} {cast 'fluidity'}
-#action {Your body mass slowly changes from solid to gelatinous} {push button}
-
+#action {Your body mass slowly changes from solid to gelatinous} {
+	if {$CAN_WRAITH == $true} {
+		cast 'wraithform';
+	} {
+		push button;
+	}
+}
+#action {Your body returns to solid form} {#var NEED_WRAITH $true}
+#action {Your body slowly takes on a wraithly form, becoming insubstantial} {push button}
 #action {is mortally wounded, and will die soon, if not aided} {kill $target}
 #action {You are knocked off your feet} {stand}
 #action {Maybe you should get on your feet first?} {stand}
@@ -92,6 +100,7 @@
 #alias {healup} {
 	#send {|};
 	#if {$MSDP_HEALTH <= 200} {cast 'greater heal'; cast 'greater heal'} {#nop}
+	#if {$NEED_WRAITH == $true} {cast 'wraithform'}
 }
 
 #action {You received} {healup; push button}
@@ -109,6 +118,7 @@
 	healupfull;
 	sleep;
     #var checkarenaenter "1";
+	#var NEED_WRAITH $false; 
 	#tick {ticker1}
 	{
 		#if {$GLOBAL_OFA == $true} {
