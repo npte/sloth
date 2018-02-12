@@ -84,7 +84,7 @@
 #action {You suddenly feel incredibly healthy and vigorous!} {cast 'fluidity'}
 #action {You failed to cast 'fluidity'} {cast 'fluidity'}
 #action {Your body mass slowly changes from solid to gelatinous} {
-	if {$CAN_WRAITH == $true} {
+	#if {$CAN_WRAITH == $true} {
 		cast 'wraithform';
 	} {
 		push button;
