@@ -269,6 +269,8 @@
     cast '$bless' $victim;
 };
 
+#alias {wra} {cast 'wraithform'}
+
 #alias {stone} {
     #var victim $MSDP_CHARACTER_NAME;
     #if {"%1" != ""} {
