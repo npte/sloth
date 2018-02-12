@@ -2,7 +2,7 @@
 #var false {"false"};
 #var GLOBAL_OFA $true;
 #var NEED_WRAITH $false;
-#var undeads "3 poltergeist";
+#var undeads " 3 poltergeist";
 
 #var MOBS {
 	{A bright-red fire lizard} {{NAME}{lizard}{ATK}{$attsolid }{OFA}{$true}}
@@ -127,9 +127,6 @@
 			stand;
 			cast 'ban';
 			cast 'summon undead' $undeads;
-			cast 'bless' spectre;
-			cast 'bless' 2.spectre;
-			cast 'bless' 3.spectre;
                         sleep;
 		};
 		#untick ticker1;
