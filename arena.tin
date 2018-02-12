@@ -1,7 +1,8 @@
 #var true {"true"};
 #var false {"false"};
 #var GLOBAL_OFA $true;
-#var NEED_WRAITH $false; 
+#var NEED_WRAITH $false;
+#var undeads "3 poltergeist";
 
 #var MOBS {
 	{A bright-red fire lizard} {{NAME}{lizard}{ATK}{$attsolid }{OFA}{$true}}
@@ -91,7 +92,7 @@
 	}
 }
 #action {Your body returns to solid form} {#var NEED_WRAITH $true}
-#action {Your body slowly takes on a wraithly form, becoming insubstantial} {push button}
+#action {Your body slowly takes on a wraithly form, becoming insubstantial} {#var NEED_WRAITH $false; push button}
 #action {is mortally wounded, and will die soon, if not aided} {kill $target}
 #action {You are knocked off your feet} {stand}
 #action {Maybe you should get on your feet first?} {stand}
@@ -125,7 +126,7 @@
 			wake;
 			stand;
 			cast 'ban';
-			cast 'summon undead' 3 spectre;
+			cast 'summon undead' $undeads;
 			cast 'bless' spectre;
 			cast 'bless' 2.spectre;
 			cast 'bless' 3.spectre;
