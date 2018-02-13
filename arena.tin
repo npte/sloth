@@ -126,10 +126,10 @@
 			wake;
 			stand;
 			cast 'ban';
-			cast 'summon undead' 3 poltergeist;
-			cast 'bless' polter;
-			cast 'bless' 2.polter;
-			cast 'bless' 3.polter;
+			cast 'summon undead' 3 wraith;
+			cast 'bless' wraith;
+			cast 'bless' 2.wraith;
+			cast 'bless' 3.wraith;
                         sleep;
 		};
 		#untick ticker1;
