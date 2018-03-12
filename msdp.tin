@@ -17,7 +17,8 @@
 	{TANK_NAME};
 	{GROUP_LEADER};
 	{HEALTH};
-	{HEALTH_MAX}
+	{HEALTH_MAX};
+	{AFFECTS}
 }
 
 #event {IAC WILL MSDP}

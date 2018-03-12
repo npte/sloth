@@ -25,12 +25,12 @@
 	#if {$checkarenaenter == "1"} {
 		wake;
 		stand;
-		cast 'create water' barrel;
-		dri barrel;
+		cast 'create water' $watercontainer;
+		dri $watercontainer;
 		sle;
 	};
 	#if {$checkarenaenter == "0"} {
-		dri barrel;
+		dri $watercontainer;
 	};
 };
 
@@ -47,7 +47,8 @@
 
 #tick {ticker} {
 	#if {$checkarenaenter != "0"} {
-		tell lyme-innkeeper ping;
+		tell druscilla ping!!!!!!;
+		tell lyme-innkeeper ping!!!!!!!;
 	};
 } {60};
 
@@ -71,9 +72,11 @@
 
 #alias {ss} {
 	#if {"%1" != ""} {
-		#var target %1
-	};
-	strike $target
+		#var target %1;
+		strike $target;
+	} {
+		strike
+	}
 };
 
 #alias {lt} {
@@ -398,3 +401,8 @@
     }
 }
 
+
+
+
+#nop ======= RUNS ========
+#alias sg2pops {#10 n;e;n;w;n;n;#4 e;n;n;e;e;ope doors;e;e;ope gate;e;close gate}

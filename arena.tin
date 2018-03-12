@@ -1,11 +1,26 @@
 #var true {"true"};
 #var false {"false"};
-#var GLOBAL_OFA $true;
+#var GLOBAL_OFA $false;
+#var CAN_WRAITH $false;
 #var NEED_WRAITH $false;
 #var undeads " 3 poltergeist";
 
 #var MOBS {
-	{A bright-red fire lizard} {{NAME}{lizard}{ATK}{$attsolid }{OFA}{$true}}
+	{An elite lizardman warrior} {{NAME}{warrior}{ATK}{$attsolid }{OFA}{$true}}
+	{A hill dwarf gladiator} {{NAME}{gladiator}{ATK}{$attsolid }{OFA}{$true}}
+	{A nomadic barbarian gladiator} {{NAME}{gladiator}{ATK}{$attsolid }{OFA}{$true}}
+	{Broho the bugbear} {{NAME}{broho}{ATK}{$attsolid }{OFA}{$true}}
+	{A firenewt battle mage} {{NAME}{mage}{ATK}{$attsolid }{OFA}{$true}}
+        {A royal infantryman} {{NAME}{infantryman}{ATK}{$attsolid }{OFA}{$true}}
+	{A cyclops gladiator slave} {{NAME}{gladiator}{ATK}{$attsolid }{OFA}{$true}}
+	{A mountain goblin warrior} {{NAME}{goblin}{ATK}{$attsolid }{OFA}{$true}}
+	{A half-orc gladiator} {{NAME}{gladiator}{ATK}{$attsolid }{OFA}{$true}}
+	{A giant black widow spider} {{NAME}{spider}{ATK}{$attsolid }{OFA}{$true}}
+        {A displacer beast} {{NAME}{beast}{ATK}{$attsolid }{OFA}{$true}}
+	{A giant dung beetle} {{NAME}{beetle}{ATK}{$attsolid }{OFA}{$true}}
+	{A master martial artist} {{NAME}{artist}{ATK}{$attsolid }{OFA}{$true}}
+	{A young gladiator} {{NAME}{gladiator}{ATK}{$attsolid }{OFA}{$true}}
+        {A bright-red fire lizard} {{NAME}{lizard}{ATK}{$attsolid }{OFA}{$true}}
 	{A faerine warrior} {{NAME}{warrior}{ATK}{$attsolid }{OFA}{$true}}
 	{A giant sow bug} {{NAME}{bug}{ATK}{$attsolid }{OFA}{$true}}
 	{A giant undead octopus}  {{NAME}{octopus}{ATK}{$attsolid }{OFA}{$true}}
@@ -36,12 +51,40 @@
 	{A fairy shaman} {{NAME}{shaman}{ATK}{$attsolid }{OFA}{$true}}
 	{A juvenile minotaur} {{NAME}{minotaur}{ATK}{$attsolid }{OFA}{$true}}
 	{A blade wielding snudiss} {{NAME}{blade}{ATK}{$attsolid }{OFA}{$true}}
+        {A minotaur gladiator} {{NAME}{gladiator}{ATK}{$attsolid }{OFA}{$true}}
+        {A bone golem} {{NAME}{bone}{ATK}{$attsolid }{OFA}{$true}}
+        {A giant anaconda} {{NAME}{giant}{ATK}{$attsolid }{OFA}{$true}}
+        {A deadly silt runner} {{NAME}{runner}{ATK}{$attsolid }{OFA}{$true}}
+        {A giant whip snake} {{NAME}{snake}{ATK}{$attsolid }{OFA}{$true}}
+        {A scorpion} {{NAME}{scorpion}{ATK}{$attsolid }{OFA}{$true}}
+        {A blademistress} {{NAME}{blademistress}{ATK}{$attsolid }{OFA}{$true}}
+        {An aging warrior} {{NAME}{warrior}{ATK}{$attsolid }{OFA}{$true}}
+        {A ragged wight} {{NAME}{wight}{ATK}{$attsolid }{OFA}{$true}}
+        {A giant cobra} {{NAME}{cobra}{ATK}{$attsolid }{OFA}{$true}}
+        {A darkling} {{NAME}{darkling}{ATK}{$attether }{OFA}{$false}}
 	{A swarm of midges} {{NAME}{swarm}{ATK}{$attether }{OFA}{$false}}
 	{A dark guardian} {{NAME}{guardian}{ATK}{$attether }{OFA}{$false}}
 	{A lesser shadow} {{NAME}{shadow}{ATK}{cast 'turn undead' }{OFA}{$false}}
 	{A giant ethereal ant} {{NAME}{ant}{ATK}{cast 'turn undead' }{OFA}{$false}}
 	{A chaotic poltergeist} {{NAME}{poltergeist}{ATK}{cast 'turn undead' }{OFA}{$false}}
+	{A hulking humanoid shadow} {{NAME}{shadow}{ATK}{$attether }{OFA}{$false}}
 };
+
+#action {A giant tiger snail is waiting for you on the other side} {
+	#var target snail;
+	#var OFA $true;
+	throw salt $target;
+	throw salt $target;
+	throw salt $target;
+	throw salt $target;
+	throw salt $target;
+	throw salt $target;
+	throw salt $target;
+	throw salt $target;
+	throw salt $target;
+	throw salt $target;
+	#send {#attsolid $target};
+}
 
 #action {%1 is waiting for you on the other side.} {
 	#var target $MOBS[%1][NAME];
@@ -65,7 +108,7 @@
 #action {You failed to cast 'firewind'} {cast 'firewind' $target}
 #action {bellows in agony!} {cast 'turn undead' $target}
 #action {You failed to cast 'turn undead'} {cast 'turn undead' $target}
-#action {A floating orb bathes you in blue light refreshing your energy} {cast 'firewind' $target}
+#action {A floating orb bathes you in blue light refreshing your energy} {cast 'fireball' $target}
 #action {You struggle with a giant undead octopus's tentacle, to no effect} {#send cast 'firewind' $target}
 #action {You failed to cast 'destruction'} {cast 'destruction' $target}
 #action {is blasted away} {cast 'destruction' $target}
@@ -74,7 +117,14 @@
 #action {You failed to cast 'fireball'} {cast 'fireball' $target}
 #action {You throw a fireball} {cast 'fireball' $target}
 
-#action {A pedestal underfoot begins to swivel on its axis, moving you into the arena} {cast 'wall of flesh'}
+#action {You circle around %1 and expertly put %2 in a deathgrip} {strike $target}
+#action {%1 sees you circling in for the kill, and deftly steps out of the way} {strike $target}
+
+#action {Your spiritual hands interlock about} {cast 'fireball' $target}
+#action {Your hands go right through} {cast 'fireball' $target}
+
+#action {A pedestal underfoot begins to swivel on its axis, moving you into the arena} {cast 'detect invis'}
+#action {Your eyes tingle} {cast 'wall of flesh'}
 #action {You failed to cast 'wall of flesh'} {cast 'wall of flesh'}
 #action {You are surrounded by a wall of rotting flesh} {cast 'stone skin'}
 #action {You failed to cast 'stone skin'} {cast 'stone skin'}
@@ -100,7 +150,7 @@
 
 #alias {healup} {
 	#send {|};
-	#if {$MSDP_HEALTH <= 200} {cast 'greater heal'; cast 'greater heal'} {#nop}
+	#if {$MSDP_HEALTH <= 200} {cast 'cure n'; cast 'cure n'} {#nop}
 	#if {$NEED_WRAITH == $true} {cast 'wraithform'}
 }
 
@@ -110,7 +160,7 @@
 #alias {healupfull} {
 	#send {|};
 	#math {count} {($MSDP_HEALTH_MAX - $MSDP_HEALTH) / 150};
-	#loop 1 $count cnt {cast 'greater heal'};
+	#loop 1 $count cnt {cast 'cure n'};
 }
 
 
@@ -159,4 +209,4 @@
 
 #action {This isn't the post office} {sleep}
 
-#alias {tocoli} {shape ferret;w;n;n;e;e;n;n;n;e;e;e;e;e;e;n;n;n;w;n;n;n;n;n;n;e;e;e;n;n;n;n;shape ret;summon juju}
+#alias {tocoli} {shape ferret;w;n;n;e;e;n;n;n;e;e;e;e;e;e;n;n;n;w;n;n;n;n;n;n;e;e;e;n;n;n;n;shape ret}
