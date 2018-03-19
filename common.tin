@@ -47,7 +47,7 @@
 
 #tick {ticker} {
 	#if {$checkarenaenter != "0"} {
-		tell druscilla ping!!!!!!;
+		tell undead-walking-dried-corpse !!!!!;
 		tell lyme-innkeeper ping!!!!!!!;
 	};
 } {60};

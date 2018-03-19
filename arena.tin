@@ -150,7 +150,7 @@
 
 #alias {healup} {
 	#send {|};
-	#if {$MSDP_HEALTH <= 200} {cast 'cure n'; cast 'cure n'} {#nop}
+	#if {$MSDP_HEALTH <= 200} {cast 'heal'; cast 'heal'} {#nop}
 	#if {$NEED_WRAITH == $true} {cast 'wraithform'}
 }
 
