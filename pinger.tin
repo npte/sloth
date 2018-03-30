@@ -1,0 +1,31 @@
+#alias pingeradd {
+	#var {mobname} {%0};
+	#replace {mobname} { } {-};
+	#var {pingerlist[$mobname]} {$mobname};
+	#send {tell $mobname ##ping##};
+}
+
+#alias pingerrem {
+	#showme {Remove %1 from pingerlist};
+	#unvar {pingerlist[%1]};
+}
+
+#alias pingerclear {
+	#showme {Clear pingerlist};
+	#unvar {pingerlist};
+}
+
+#alias doping {
+	#if {&pingerlist} {
+		#foreach {$pingerlist[%*]} {name} {
+			#send {tell $name ##ping## $name};
+		};
+	};
+	#else {
+		#send {tell lyme-innkeeper ##ping##};
+	}
+}
+
+#action {You tell %+ '##ping## %+'} {#script {res} {./send.sh %2}}
+#ticker {pinger} {doping} {60}
+

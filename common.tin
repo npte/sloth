@@ -1,3 +1,5 @@
+#class PINGER read pinger.tin
+
 #alias trg {
 	#var target %1;
 	#if {MSDP_CHARACTER_NAME == MSDP_GROUP_LEADER} {
@@ -44,13 +46,6 @@
 		sle;
 	};
 };
-
-#tick {ticker} {
-	#if {$checkarenaenter != "0"} {
-		tell undead-walking-dried-corpse !!!!!;
-		tell lyme-innkeeper ping!!!!!!!;
-	};
-} {60};
 
 #alias {consloth} {#sess sloth slothmud.org 6101};
 
