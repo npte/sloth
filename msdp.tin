@@ -18,6 +18,8 @@
 	{GROUP_LEADER};
 	{HEALTH};
 	{HEALTH_MAX};
+	{MANA};
+	{MANA_MAX};
 	{AFFECTS}
 }
 

@@ -124,6 +124,7 @@
 #action {Your hands go right through} {cast 'fireball' $target}
 
 #action {A pedestal underfoot begins to swivel on its axis, moving you into the arena} {cast 'detect invis'}
+#action {You failed to cast 'detect invisibility'} {cast 'detect invis'}
 #action {Your eyes tingle} {cast 'wall of flesh'}
 #action {You failed to cast 'wall of flesh'} {cast 'wall of flesh'}
 #action {You are surrounded by a wall of rotting flesh} {cast 'stone skin'}
@@ -154,8 +155,8 @@
 	#if {$NEED_WRAITH == $true} {cast 'wraithform'}
 }
 
-#action {You received} {healup; push button}
-#action {Total exp for kill is} {healup; push button}
+#action {You received} {healup; sacr corpse; push button}
+#action {Total exp for kill is} {healup; sacr corpse; push button}
 
 #alias {healupfull} {
 	#send {|};
@@ -166,8 +167,6 @@
 
 #action {The floor swivels, forcing you to leave the arena area}
 {
-	healupfull;
-	sleep;
         #var checkarenaenter "1";
 	#var NEED_WRAITH $false; 
 	#tick {ticker1}
@@ -191,6 +190,9 @@
 			};
 		} {60};
 	} {480};
+	#showme $MSDP_AFFECTS;
+	healup;e;pull chain;pull chain;w;cast 'regeneration';sle;
+	#showme $MSDP_AFFECTS;
 }
 
 #action {%1 must wait %2 minutes before being allowed back into the arena area} {
