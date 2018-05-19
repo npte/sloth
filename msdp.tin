@@ -25,13 +25,28 @@
 
 #event {IAC WILL MSDP}
 {
-    #send {$IAC$DO$MSDP\};
+    	#send {$IAC$DO$MSDP\};
 	msdp_report
 }
 
 #event {IAC SB MSDP}
 {
 	#var {MSDP_%0} {%1};
+	#foreach {$MSDP_AFFECTS[]} {aff} 
+	{
+		#if {$MSDP_AFFECTS[$aff] > -1}
+		{
+			#if {&affLine}
+			{
+				#var affLine $affLine|$aff:$MSDP_AFFECTS[$aff]
+			} 
+			{
+				#var affLine $aff:$MSDP_AFFECTS[$aff]
+			}
+		};
+	};
+	#line log ./logs/affects.txt $affLine;
+	#unvar affLine;
 }
 
 #alias {msdp_report}

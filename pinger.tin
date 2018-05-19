@@ -26,6 +26,6 @@
 	}
 }
 
-#action {You tell %+ '##ping## %+'} {#script {res} {./send.sh %2}}
+#action {You tell %+ '##ping## %+'} {#script {res} {./scripts/send.sh %2}}
 #ticker {pinger} {doping} {60}
 

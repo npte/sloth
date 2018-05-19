@@ -108,7 +108,7 @@
 #action {You failed to cast 'firewind'} {cast 'firewind' $target}
 #action {bellows in agony!} {cast 'turn undead' $target}
 #action {You failed to cast 'turn undead'} {cast 'turn undead' $target}
-#action {A floating orb bathes you in blue light refreshing your energy} {cast 'fireball' $target}
+#action {A floating orb bathes you in blue light refreshing your energy} {cast 'firewind' $target}
 #action {You struggle with a giant undead octopus's tentacle, to no effect} {#send cast 'firewind' $target}
 #action {You failed to cast 'destruction'} {cast 'destruction' $target}
 #action {is blasted away} {cast 'destruction' $target}
@@ -120,8 +120,8 @@
 #action {You circle around %1 and expertly put %2 in a deathgrip} {strike $target}
 #action {%1 sees you circling in for the kill, and deftly steps out of the way} {strike $target}
 
-#action {Your spiritual hands interlock about} {cast 'fireball' $target}
-#action {Your hands go right through} {cast 'fireball' $target}
+#action {Your spiritual hands interlock about} {cast 'firewind' $target}
+#action {Your hands go right through} {cast 'firewind' $target}
 
 #action {A pedestal underfoot begins to swivel on its axis, moving you into the arena} {cast 'detect invis'}
 #action {You failed to cast 'detect invisibility'} {cast 'detect invis'}
