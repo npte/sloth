@@ -45,7 +45,7 @@
 			}
 		};
 	};
-	#line log ./logs/affects.txt $affLine;
+	#nop #line log ./logs/affects.txt $affLine;
 	#unvar affLine;
 }
 
