@@ -6,7 +6,7 @@
 
 #var armor {stone skin}
 #var bless {bless}
-#var lite {sanctuary}
+#var lite {aegis}
 
 #var attether {cast 'firewind'}
 #var attsolid {cast 'firewind'}
