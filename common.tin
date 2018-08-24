@@ -401,3 +401,4 @@
 
 #nop ======= RUNS ========
 #alias sg2pops {#10 n;e;n;w;n;n;#4 e;n;n;e;e;ope doors;e;e;ope gate;e;close gate}
+#alias wg2sheol {#6 n;w;w;n;w;w;n;w;w;#4 u;n;u;n;u;n; #4 d}
