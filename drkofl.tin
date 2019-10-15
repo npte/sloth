@@ -3,17 +3,16 @@
 #class TRACK read track.tin
 
 #var checkarenaenter "-1"
-#var watercontainer barrel
+#var watercontainer waterskin
 
 #var armor {stone skin}
 #var bless {bless}
-#var lite {aegis}
-#var flui {greater fluidity}
+#var lite {shield of fa}
 
-#var attether {cast 'firewind'}
-#var attsolid {cast 'firewind'}
+#var attether {cast 'turn undead'}
+#var attsolid {kick}
 
-#var CAN_WRAITH {"true"}
+#var CAN_WRAITH {"false"}
 
 #split
 

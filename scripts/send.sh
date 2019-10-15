@@ -1,1 +1,1 @@
-python3 ../tlgm/bot.py $* &
+python3 ~/sloth/scripts/bot.py $* &

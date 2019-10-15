@@ -137,10 +137,10 @@
 #action {You failed to cast 'fluidity'} {cast 'fluidity'}
 #action {Your body mass slowly changes from solid to gelatinous} {
 	#if {$CAN_WRAITH == $true} {
-		cast 'wraithform';
-	} {
+ 		cast 'wraithform';
+ 	} {
 		push button;
-	}
+ 	}
 }
 #action {Your body returns to solid form} {#var NEED_WRAITH $true}
 #action {Your body slowly takes on a wraithly form, becoming insubstantial} {#var NEED_WRAITH $false; push button}

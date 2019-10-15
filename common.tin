@@ -84,6 +84,8 @@
 
 #nop spells
 
+#alias {march} {sing 'march'}
+
 #alias {fb} {
 	cast 'fireball' %1
 } 
@@ -345,8 +347,23 @@
     cast 'remove poison' $victim;
 };
 
-#alias {flui} {cast 'fluidity'};
+#alias {flui} {
+	#if {$flui != ""} {
+         #var flui = "fluidity";
+    }
+    cast '$flui';
+};
+
+#alias {sshield} {
+    #var victim $MSDP_CHARACTER_NAME;
+    #if {"%1" != ""} {
+        #var victim %1;
+    };
+    cast 'spell shield' $victim 40;
+};
+
 #alias {glamour} {cast 'glamour'};
+#alias {spectral} {cast 'spectral shield'};
 #alias {visage} {cast 'undead visage'};
 #alias {dm} {cast 'detect magic'};
 #alias {dev} {cast 'detect evil'};
@@ -373,6 +390,11 @@
 #alias {wrr} {cast 'word of recall'};
 #alias {call} {cast 'summon undead' %1 %2};
 #alias {embalm} {cast 'embalm' %1};
+
+#alias {rsc} {cast 'resist cold'};
+#alias {rsf} {cast 'resist fire'};
+#alias {rsw} {cast 'resist webs'};
+#alias {rsp} {cast 'resist poison'};
 
 #var autostrike $false
 #alias {autostrike} {
@@ -401,4 +423,15 @@
 
 #nop ======= RUNS ========
 #alias sg2pops {#10 n;e;n;w;n;n;#4 e;n;n;e;e;ope doors;e;e;ope gate;e;close gate}
-#alias wg2sheol {#6 n;w;w;n;w;w;n;w;w;#4 u;n;u;n;u;n; #4 d}
+#alias wg2sheol {#6 n;w;w;n;w;w;n;w;w;#4 u;n;u;n;u;n;#3 d}
+#alias wg2cznude {n;#5 e;s;#3 e;n;e;#4 n;#3 e;ope door s;s;close door n;s;#3 e;s;s;ope door w;w;close door e;n;w;exam window;shape ret}
+#alias cznude2czphenw {exam house;e;s;ope door e;e;close door w;n;n;e;u;e;d;e;n;n;ope door n;n;close door s;shape ret}
+#alias wg2pengking {n;w;w;n;w;w;s;s;e;s;ope crack;w;close crack;#5 u}
+#alias wg2lila {#3 w;#3 s;#3 e;#4 s;#5 w;ope door n;n;close door s}
+#alias wg2zw {#6 n;w;n;e;e;n;#3 e;e;e;open pen;e;close pen} 
+
+#nop ====== ALIASES =======
+#alias km {kill male}
+#alias kf {get moldy pack;reci moldy female;}
+#alias bmoldy {buy 10 moldy;put all.moldy pack}
+ 

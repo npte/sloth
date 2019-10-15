@@ -26,6 +26,7 @@
 	}
 }
 
-#nop #action {You tell %+ '##ping## %+'} {#script {res} {./scripts/send.sh %2}}
+#action {You tell %1 '##ping## %2'} {#script {res} {./scripts/send.sh %2}}
+#nop #action {You tell a girl in azure robes '##ping## %+'} {#showme %2}
 #ticker {pinger} {doping} {60}
 

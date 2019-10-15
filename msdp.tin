@@ -45,7 +45,7 @@
 			}
 		};
 	};
-	#nop #line log ./logs/affects.txt $affLine;
+	#script {sendAffs} {echo "$affLine" >> /tmp/slpipe};
 	#unvar affLine;
 }
 
