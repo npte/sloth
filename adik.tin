@@ -1,0 +1,18 @@
+#class MSDP read msdp.tin
+#class COMMON read common.tin
+
+#var checkarenaenter "-1"
+#var watercontainer waterskin 
+
+#var armor {armor}
+#var bless {bless}
+#var lite {shield of faith}
+#var flui {fluidity}
+
+#var attether {cast 'firewind'}
+#var attsolid {cast 'firewind'}
+
+#var CAN_WRAITH {"true"}
+
+#split
+
