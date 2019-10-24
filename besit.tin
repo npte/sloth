@@ -1,0 +1,38 @@
+#class MSDP read msdp.tin
+#class COMMON read common.tin
+#class TRACK read track.tin
+
+#var checkarenaenter "-1"
+#var watercontainer waterskin
+
+#var armor {armor}
+#var bless {bless}
+#var lite {shield of fa}
+
+#var attether {cast 'turn undead'}
+#var attsolid {kick}
+
+#var CAN_WRAITH {"false"}
+
+#split
+
+#alias ceph shape cephalopod
+#alias sret shape return
+#nop #act {You lash about wildly with your numerous tentacles} {lash $target}
+#nop #act {hates your guts} {lash $target} 
+#nop #act {Total exp for kill is} {|;|;|}
+
+#nop #alias km {#var target male;kill male}
+#nop #alias kf {#var target female;get moldy pack;reci moldy female}
+#nop #alias mold {get moldy pack;reci moldy %1}
+
+#act {You get a white scaly %1 from the corpse of the king of penguins} {drop %1}
+#act {You get an aqua spellbook from the corpse of a noble penguin} {drop aqua-spellbook}
+
+#act {You get an ancient spellbook from the corpse of Lila} {drop ancient-spellbook}
+#act {You get a worn pair of boots from the corpse of Lila} {drop boots}
+#act {You get some %1 dust from the corpse of %2 on the ground} {drop dust}
+#act {You get wreath of the ordained from the corpse of Lila that's on the ground} {drop wreath} 
+#act {You get an ancient parchment from the corpse of the librarian that's on the ground} {drop parchment}
+#act {You get a tattered note from the corpse} {drop note}
+
