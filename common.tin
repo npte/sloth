@@ -429,7 +429,7 @@
 #alias wg2pengking {n;w;w;n;w;w;s;s;e;s;ope crack;w;close crack;#5 u}
 #alias wg2lila {#3 w;#3 s;#3 e;#4 s;#5 w;ope door n;n;close door s}
 #alias wg2zw {#6 n;w;n;e;e;n;#3 e;e;e;open pen;e;close pen} 
-
+#alias ma2lcrs {s;#5 e;d;#4 e;n;w;u;ope gate n;n;close gate s;ope gate e;e;close gate w;n;n;e;n;n;e;n;n;n;#5 w}
 #nop ====== ALIASES =======
 #alias km {kill male}
 #alias kf {get moldy pack;reci moldy female;}
