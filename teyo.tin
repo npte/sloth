@@ -1,5 +1,6 @@
 #class MSDP read msdp.tin
 #class COMMON read common.tin
+#class TRACK read track.tin
 
 #var checkarenaenter "-1"
 #var watercontainer waterskin
