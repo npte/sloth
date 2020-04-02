@@ -5,10 +5,9 @@
 #var checkarenaenter "-1"
 #var watercontainer waterskin
 
-#var armor {stone skin}
+#var armor {armor}
 #var bless {bless}
-#var lite {sanctuary}
-#var flui {fluidity}
+#var lite {shield of fa}
 
 #var attether {cast 'turn undead'}
 #var attsolid {kick}
